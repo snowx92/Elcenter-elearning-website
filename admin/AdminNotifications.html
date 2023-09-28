@@ -1,0 +1,185 @@
+<!doctype html>
+<html>
+
+<head>
+
+
+
+
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+    <title>ElcenterOne</title>
+    <link rel="icon" href="../Img/top.png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width , initial-scale=1.0">
+    <link rel="stylesheet" href="css/AdminNotifications.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+
+
+
+    <script src="https://www.gstatic.com/firebasejs/7.20.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.1.2/firebase-storage.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.20.0/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.20.0/firebase-analytics.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.20.0/firebase-auth.js"></script>
+
+
+</head>
+
+<body>
+    <div class="container">
+        <nav class="navbar">
+            <div class="nav_icon" onclick="toggleSidebar()">
+                <i class="fa fa-bars"></i>
+            </div>
+
+            <div class="navbar__right">
+
+
+
+            </div>
+        </nav>
+        <main>
+            <div class="main__container">
+                <div class="main__title">
+
+                    <div class="main_greeting">
+
+                        <p>Welcome to Admin Notifications</p>
+                    </div>
+                </div>
+
+                <div class="noti">
+
+
+                    <input type="text" placeholder="الكلام" class="form-control1" id="text">
+
+
+
+
+
+                </div>
+                <h3 id="h3" style="color: red ; text-align: center; display: none; transition:  0.5s">الرجاء كتابه اشعار</h3>
+                <h3 id="h4" style="color: green; text-align: center; display: none; transition:  0.5s">تم ارسال الاشعار بنجاح</h3>
+
+
+
+                <div class="btns" style="margin-right: 10%">
+
+                    <a class="btn1" id="send_to_student" onclick="send_student()">ارسال الاشعار الي جميع الطلاب</a>
+                    <a class="btn1" id="send_to_teachers" onclick="send_teachers()">ارسال الاشعار الي جميع المعلمين</a>
+
+                </div>
+
+            </div>
+        </main>
+
+        <div id="sidebar">
+            <div class="sidebar__title">
+                <div class="sidebar__img" style="padding-left:40px;">
+                    <img src="../Img/logowhitex.png" alt="">
+
+                </div>
+                <i class="fa fa-times" id="sidebarIcon" onclick="closeSidebar()"></i>
+            </div>
+
+
+            <div class="sidebar__link ">
+                <i class="fa fa-plus-circle"></i>
+                <a href="add_teacher.html">Add teacher</a>
+            </div>
+
+            <div class="sidebar__link">
+                <i class="fa fa-building-o"></i>
+                <a href="AddLecture.html">Add Lecture</a>
+            </div>
+
+            <div class="sidebar__link">
+                <i class="fa fa-wrench"></i>
+                <a href="add_codes.html">Add codes</a>
+            </div>
+
+            <div class="sidebar__link">
+                <i class="fa fa-archive"></i>
+                <a href="chat.html">Messages</a>
+            </div>
+            <div class="sidebar__link active_menu_link">
+                <i class="fa fa-bell"></i>
+                <a href="AdminNotifications.html">Notification</a>
+            </div>
+
+            <div class="sidebar__link ">
+                <i class="fa fa-handshake-o"></i>
+                <a href="BlockUser.html">Block Student</a>
+            </div>
+
+            <div class="sidebar__link ">
+                <i class="fa fa-sign-out"></i>
+                <a href="#" onclick="logout()">Logout</a>
+            </div>
+
+
+
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <script>
+        // Your web app's Firebase configuration
+        // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+        var firebaseConfig = {
+            apiKey: "AIzaSyDEmM2fuFgfYpeHDkD43je9ayNI_7C681k",
+            authDomain: "oxford-web-edu.firebaseapp.com",
+            databaseURL: "https://oxford-web-edu.firebaseio.com",
+            projectId: "oxford-web-edu",
+            storageBucket: "oxford-web-edu.appspot.com",
+            messagingSenderId: "506633370534",
+            appId: "1:506633370534:web:558409720993d6f7296d67",
+            measurementId: "G-Y1JHZQ0Z43"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        firebase.analytics();
+    </script>
+
+    <script src="js/AdminNotifications.js"></script>
+    <script src="js/SIDEBAR.js"></script>
+</body>
+
+
+
+</html>

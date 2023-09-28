@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <meta name="viewport" content="width=device-width , initial-scale=1.0">
+    <script src="https://use.fontawesome.com/releases/v5.15.1/js/all.js" data-auto-replace-svg="nest"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+
+    <title>ElcenterOne</title>
+    <link rel="icon" href="Img/top.png">
+
+    <!-- Bootstrap core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <meta name="viewport" content="width=device-width , initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <script src="https://www.gstatic.com/firebasejs/7.20.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.20.0/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.20.0/firebase-analytics.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.20.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.1.2/firebase-storage.js"></script>
+
+
+
+    <!-- Custom styles for this template -->
+    <link href="css/lecture.css" rel="stylesheet">
+
+</head>
+
+<body onload="importinfo()">
+
+    <div class="d-flex" id="wrapper">
+
+        <!-- Sidebar -->
+        <div class="bg-light border-right" id="sidebar-wrapper">
+            <div class="sidebar-heading">
+                <img id="pic" src="https://ptetutorials.com/images/user-profile.png" class="profile_img" alt="">
+                <h4 id="username"></h4>
+
+            </div>
+            <div class="list-group list-group-flush">
+
+                <li class="m7twa dropdown">
+                    <a href="#"> OverView </a>
+
+                </li>
+                <div class="lec" id="lecsinfo">
+
+                </div>
+                <li class="exams dropdown">
+                    <a href="#"> Exams </a>
+
+                </li>
+
+
+
+
+
+            </div>
+        </div>
+        <!-- /#sidebar-wrapper -->
+
+        <!-- Page Content -->
+        <div id="page-content-wrapper">
+
+            <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
+                <button class="btn btn-primary" id="menu-toggle">القائمة</button>
+
+
+
+
+
+
+
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="Teachers.html">الرئيسية<i class="fas fa-home" style="padding-left: 10px;"></i></a>
+                        </li>
+
+                    </ul>
+                </div>
+            </nav>
+
+
+            <div class="container">
+
+
+                <br>
+                <br>
+                <h1 class="center-text">مشاهدة مفيدة</h1>
+                <div class="vcontainer" >
+                    <iframe id="videoId" src="" class="vframe" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+                
+
+                </div>
+                <h1 class="right-text">محتوي المحاضرة -</h1>
+                <p class="right-text-p">لرؤية الملزمة قم بالضغط على الصورة</p>
+                <a href="#" style="margin: auto;" target="_blank" class="pdf" id="pdf">
+                    <img src="Img/pdf.png">
+                </a>
+                <div class="quiz" id="quiz">
+                    <h1 id="quiz-name"></h1>
+                    <button id="submit-button">Submit Answers</button>
+                    <button id="next-question-button">Next Question</button>
+                    <button id="prev-question-button">Previous</button>
+
+                    <div id="quiz-results">
+
+                        <p id="quiz-results-message"></p>
+                        <p id="quiz-results-score"></p>
+                        <button id="quiz-retry-button">Retry</button>
+
+                    </div>
+                </div>
+
+
+            </div>
+
+
+
+
+
+
+        </div>
+    </div>
+    <!-- /#page-content-wrapper -->
+
+
+    <!-- /#wrapper -->
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Menu Toggle Script -->
+    <script>
+        $("#menu-toggle").click(function(e) {
+            e.preventDefault();
+            $("#wrapper").toggleClass("toggled");
+        });
+    </script>
+
+    <script>
+        // Your web app's Firebase configuration
+        // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+        var firebaseConfig = {
+            apiKey: "AIzaSyDEmM2fuFgfYpeHDkD43je9ayNI_7C681k",
+            authDomain: "oxford-web-edu.firebaseapp.com",
+            databaseURL: "https://oxford-web-edu.firebaseio.com",
+            projectId: "oxford-web-edu",
+            storageBucket: "oxford-web-edu.appspot.com",
+            messagingSenderId: "506633370534",
+            appId: "1:506633370534:web:558409720993d6f7296d67",
+            measurementId: "G-Y1JHZQ0Z43"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        firebase.analytics();
+    </script>
+    <script src="Js/lec.js"></script>
+
+</body>
+
+</html>

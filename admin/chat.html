@@ -1,0 +1,129 @@
+
+<!------ Include the above in your HEAD tag ---------->
+
+<html>
+<head>
+
+
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+	
+	
+	<link rel="stylesheet" href="css/chat.css">
+	
+	 <title>ElcenterOne</title>
+	
+<link rel="icon" href="../Img/top.png">
+    <script src="https://www.gstatic.com/firebasejs/7.20.0/firebase-app.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/8.1.2/firebase-storage.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/7.20.0/firebase-database.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/7.20.0/firebase-analytics.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/7.20.0/firebase-auth.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width , initial-scale=1.0">
+    
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+
+<!------ Include the above in your HEAD tag ---------->
+</head>
+<body onload="on_load()">
+	 
+		 
+<div class="container">
+
+	 <main>
+	  <nav class="navbar">
+			  <div class="nav_icon" onclick="toggleSidebar()">
+				  <i class="fa fa-bars"></i>
+				</div>
+			
+				<div class="navbar__right">
+				
+					
+					
+				</div>
+			</nav>
+<h3 class=" text-center">خدمة العملاء</h3>
+<div class="messaging" id="bodyy">
+      
+        
+         
+    
+		  
+	
+    </div>
+		
+			   </main>
+	<div id="sidebar">
+			<div class="sidebar__title">
+				<div class="sidebar__img" style="padding-left: 40px;">
+					<img src="../Img/logowhitex.png" alt="">
+					
+				</div>
+				<i class="fa fa-times" id="sidebarIcon" onclick="closeSidebar()"></i>
+			</div>
+
+			
+
+				<div class="sidebar__link ">
+					<i class="fa fa-plus-circle"></i>
+					<a href="add_teacher.html">Add teacher</a>
+				</div>
+
+				<div class="sidebar__link">
+					<i class="fa fa-building-o"></i>
+					<a href="AddLecture.html">Add Lecture</a>
+				</div>
+
+				<div class="sidebar__link">
+					<i class="fa fa-wrench"></i>
+					<a href="add_codes.html">Add codes</a>
+				</div>
+
+				<div class="sidebar__link active_menu_link">
+					<i class="fa fa-archive"></i>
+					<a href="chat.html">Messages</a>
+				</div>
+				<div class="sidebar__link">
+					<i class="fa fa-bell"></i>
+					<a href="AdminNotifications.html">Notification</a>
+				</div>
+
+				<div class="sidebar__link ">
+					<i class="fa fa-handshake-o"></i>
+					<a href="BlockUser.html">Block Student</a>
+				</div>
+				
+				<div class="sidebar__link ">
+					<i class="fa fa-sign-out"></i>
+					<a href="#"
+					onclick="logout()">Logout</a>
+				</div>
+				
+
+
+
+			</div>
+		</div>
+
+   <script>
+		// Your web app's Firebase configuration
+		// For Firebase JS SDK v7.20.0 and later, measurementId is optional
+		var firebaseConfig = {
+			apiKey: "AIzaSyDEmM2fuFgfYpeHDkD43je9ayNI_7C681k",
+			authDomain: "oxford-web-edu.firebaseapp.com",
+			databaseURL: "https://oxford-web-edu.firebaseio.com",
+			projectId: "oxford-web-edu",
+			storageBucket: "oxford-web-edu.appspot.com",
+			messagingSenderId: "506633370534",
+			appId: "1:506633370534:web:558409720993d6f7296d67",
+			measurementId: "G-Y1JHZQ0Z43"
+		};
+		// Initialize Firebase
+		firebase.initializeApp(firebaseConfig);
+		firebase.analytics();
+
+	</script>
+   <script src="js/chat.js"></script>
+   <script src="js/SIDEBAR.js"></script>
+    </body>
+    </html>

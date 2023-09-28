@@ -1,0 +1,90 @@
+<!------ Include the above in your HEAD tag ---------->
+
+<html>
+
+<head>
+
+ <meta charset="UTF-8">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+
+
+	<link rel="stylesheet" href="css/chat.css">
+
+	<title>Chat</title>
+	<link rel="icon" href="img/toplogo.jpeg">
+
+	<script src="https://www.gstatic.com/firebasejs/7.20.0/firebase-app.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/7.20.0/firebase-database.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/7.20.0/firebase-analytics.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/7.20.0/firebase-auth.js"></script>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width , initial-scale=1.0">
+
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+
+	<!------ Include the above in your HEAD tag ---------->
+</head>
+
+<body>
+
+
+	
+		
+			<h3 class=" text-center">Messaging</h3>
+			<div class="messaging">
+				<div class="inbox_msg">
+					<div class="inbox_people">
+						
+						<div class="inbox_chat" id="inbox">
+						</div>
+					</div>
+
+
+					<div class="mesgs">
+
+
+						<div class="msg_history" id="inboxx">
+							
+							
+						</div>
+
+
+						<div class="type_msg">
+							<div class="input_msg_write">
+								<input type="text" class="write_msg" placeholder="Type a message" id = "message"/>
+								<button class="msg_send_btn" type="button"><i class="fa fa-paper-plane-o" aria-hidden="true" onclick="sendMassage()" id="send"></i></button>
+							</div>
+						</div>
+					</div>
+				</div>
+
+
+
+
+			</div>
+
+		
+	
+
+	<script>
+		// Your web app's Firebase configuration
+		// For Firebase JS SDK v7.20.0 and later, measurementId is optional
+		var firebaseConfig = {
+			apiKey: "AIzaSyDEmM2fuFgfYpeHDkD43je9ayNI_7C681k",
+			authDomain: "oxford-web-edu.firebaseapp.com",
+			databaseURL: "https://oxford-web-edu.firebaseio.com",
+			projectId: "oxford-web-edu",
+			storageBucket: "oxford-web-edu.appspot.com",
+			messagingSenderId: "506633370534",
+			appId: "1:506633370534:web:558409720993d6f7296d67",
+			measurementId: "G-Y1JHZQ0Z43"
+		};
+		// Initialize Firebase
+		firebase.initializeApp(firebaseConfig);
+		firebase.analytics();
+
+	</script>
+	<script src="Js/chat.js"></script>
+</body>
+
+</html>

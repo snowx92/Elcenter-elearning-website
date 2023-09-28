@@ -1,0 +1,146 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Quicker-Admin-BlockUser</title>
+    <script src="https://www.gstatic.com/firebasejs/7.20.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.20.0/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.20.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.20.0/firebase-analytics.js"></script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width , initial-scale=1.0">
+    <link rel="stylesheet" href="css/BlockUser.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+
+</head>
+<body>
+    <div class="container">
+        //
+
+        <main>
+            <div class="main__container">
+                <div class="main__title">
+
+                    <div class="main_greeting">
+                        <h1>Block User</h1>
+
+                    </div>
+                </div>
+
+                <div class="boxContainer">
+                    <table class="elementsContainer">
+                        <tr>
+                            <td>
+                                <input type="text" placeholder="Search.." class="search" id="phonee">
+
+                            </td>
+                            <td>
+                                <a href="#" onclick="getuser()"><i class="fa fa-search"></i></a>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="center">
+
+
+
+                    <table id="userinfo">
+                        <tr>
+
+                            <th>الاسم</th>
+                            <th>Id</th>
+                            <th>النوع</th>
+                            <th>الهاتف</th>
+
+                        </tr>
+                        <tbody>
+                        </tbody>
+
+                    </table>
+                    <button class="btn" type="submit" onclick="getReports()">اظهار التقارير</button>
+                </div>
+
+
+            </div>
+        </main>
+
+
+        <div id="sidebar">
+				<div class="sidebar__title">
+				<div class="sidebar__img">
+					<img src="img/avatar.png" alt="">
+					<h1>Codersbite</h1>
+					</div>
+					<i class="fa fa-times" id="sidebarIcon" onclick="closeSidebar()"></i>
+				</div>
+				
+				<div class="sidebar__menu">
+				<div class="sidebar__link active_menu_link">
+					<i class="fa fa-home"></i>
+					<a href="#">Dashboard</a>
+					</div>
+					<h2>MNG</h2>
+					
+					<div class="sidebar__link">
+					<i class="fa fa-plus-circle"></i>
+						<a href="add_teacher.html">Add teacher</a>
+					</div>
+					
+					<div class="sidebar__link">
+					<i class="fa fa-building-o"></i>
+						<a href="ImportUsersInfo.html">Import Teacher Info</a>
+					</div>
+					
+					<div class="sidebar__link">
+					<i class="fa fa-wrench"></i>
+						<a href="USERMONEYADMIN.html">Import Student Info</a>
+					</div>
+					
+					<div class="sidebar__link">
+					<i class="fa fa-archive"></i>
+						<a href="SearchReport.html">Payment Managments</a>
+					</div>
+					
+						<div class="sidebar__link ">
+					<i class="fa fa-handshake-o"></i>
+						<a href="BlockUser.html">Block Student</a>
+					</div>
+					<div class="sidebar__link">
+					<i class="fa fa-calendar-check-o"></i>
+						<a href="chat.html">Chat</a>
+					</div>
+					
+					
+					
+				</div>
+			</div>
+
+
+    </div>
+
+    <script>
+        // Your web app's Firebase configuration
+        // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+        var firebaseConfig = {
+            apiKey: 'AIzaSyCVIyIfWmXXRN_Bv5-c34gYK907Pw798Uk',
+            authDomain: 'pickly-ed2f4.firebaseapp.com',
+            databaseURL: 'https://pickly-ed2f4.firebaseio.com',
+            projectId: 'pickly-ed2f4',
+            storageBucket: 'pickly-ed2f4.appspot.com',
+            messagingSenderId: '146413958165',
+            appId: '1:146413958165:web:b1ea7307bd1413c4dd0a1c',
+            measurementId: 'G-HV6VCFCH1Z',
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+
+        firebase.analytics();
+
+
+
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+    <script src="js/blockUser.js"></script>
+
+</body>
+</html>

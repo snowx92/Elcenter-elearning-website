@@ -1,0 +1,90 @@
+.accordion a{
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	padding: 1rem 3rem 1rem 1rem;
+	color: #7288a2;
+	font-size: 1.15rem;
+	font-weight: 400;
+	border-bottom: 1px solid #DDD;
+	text-align: right;
+	
+	
+}
+.accordion a:active{
+	color: #03B5D2 !important;
+	border-bottom: 1px solid #03B5D2;
+}
+.accordion a:hover , .accordion a:hover::after{cursor: pointer; color: #03B5D2;
+text-decoration: none;}
+
+.accordion a::after{
+	font-family: "Font Awesome 5 Free";
+	content: "\f358";
+	position: absolute;
+	float: right;
+	right: 1rem;
+	font-size: 1.5rem;
+	color: #03B5D2;
+}
+.accordion a.active::after{
+	font-family: "Font Awesome 5 Free";
+	content: "\f358";
+	color: #03B5D2;
+}
+
+
+.accordion .content p{
+	font-size: 1rem;
+	font-weight: 300;
+	text-align: right;
+}
+.accordion .content{
+	opacity: 0;
+	max-height:0px ;
+	padding: 0 1rem;
+	border-bottom: 1px solid #DDD;
+	overflow: hidden;
+	transition: all 0.3s ease ;
+}
+
+.accordion .content.active{
+	opacity: 1;
+	max-height: 100% ;
+	padding: 1rem;
+	transition: all 0.3s ease;
+}
+
+@media (max-width:768px){
+	.accordion .content{
+	opacity: 0;
+	max-height:0px ;
+	padding: 0 1rem;
+	border-bottom: 1px solid #DDD;
+	overflow: hidden;
+	transition: all 0.3s ease ;
+}
+
+	
+
+.accordion .content.active{
+	opacity: 1;
+	max-height: 100%;
+	padding: 1rem;
+	transition: all 0.3s ease;
+}
+}
+
+
+
+
+
+
+.col .accordion-item{
+	margin-top: 20px;
+}
+ .accordion-item .content{
+	margin-top: 10px;
+}
+
