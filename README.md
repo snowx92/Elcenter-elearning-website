@@ -19,7 +19,7 @@ Student Dashboard: Offers students a personalized experience with profile manage
 
 Admin Dashboard: Provides administrators with valuable statistics and the ability to create teacher accounts and approve course submissions.
 
-Your Role:
+my Role:
 As the developer of Elcenter, I played a pivotal role in designing and implementing the platform. I was responsible for the full-stack development, combining Firebase and Node.js to create a secure and efficient database system. I also integrated Vimeo for hosting video content and implemented the HTML, CSS, and JavaScript for the user interface, ensuring a smooth and responsive user experience.
 
 Challenges Faced:
